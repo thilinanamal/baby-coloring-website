@@ -20,9 +20,7 @@ export default function Controls({ canUndo, onUndo, onClean }: Props) {
       >
         ↩️
       </button>
-      <button className="ctrl-btn" aria-label="clean" onPointerDown={onClean}>
-        🧹
-      </button>
+      <HoldButton label="clean" emoji="🧹" onComplete={onClean} />
       <HoldButton label="home" emoji="🏠" onComplete={() => navigate(base)} />
     </div>
   )
