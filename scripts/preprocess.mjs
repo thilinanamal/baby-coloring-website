@@ -57,8 +57,9 @@ function erode1D(src, w, h, r, horizontal) {
         let v = 1
         for (let k = -r; k <= r; k++) {
           const xx = x + k
-          // outside image treated as background (0) → erosion shrinks at edges
-          if (xx < 0 || xx >= w || !src[row + xx]) { v = 0; break }
+          // out-of-bounds treated as FOREGROUND so border-touching lines are
+          // not eroded away (that would open a gap where a line meets the edge)
+          if (xx >= 0 && xx < w && !src[row + xx]) { v = 0; break }
         }
         out[row + x] = v
       }
@@ -69,7 +70,7 @@ function erode1D(src, w, h, r, horizontal) {
         let v = 1
         for (let k = -r; k <= r; k++) {
           const yy = y + k
-          if (yy < 0 || yy >= h || !src[yy * w + x]) { v = 0; break }
+          if (yy >= 0 && yy < h && !src[yy * w + x]) { v = 0; break }
         }
         out[y * w + x] = v
       }

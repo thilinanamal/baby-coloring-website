@@ -3,10 +3,14 @@
   "id": "dog",
   "w": 2048,
   "h": 2048,
-  "count": 24,
-  "rawRegions": 24,
+  "count": 28,
+  "rawRegions": 28,
   "mergedCount": 0,
   "backgroundIds": [
-    1
+    1,
+    2,
+    3,
+    5,
+    14
   ]
 }
