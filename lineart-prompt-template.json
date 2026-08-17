@@ -1,0 +1,49 @@
+{
+  "task": "Generate a single black-and-white coloring-page line art image.",
+  "how_to_use": "Send this JSON first. Then send a second message with ONLY the subject to draw, e.g. 'Unicorn'. Draw that subject following every rule below.",
+  "subject": "{SUBJECT_FROM_NEXT_MESSAGE}",
+  "audience": "Toddlers aged 1-4. The art must be simple, big, and cheerful.",
+  "style": {
+    "look": "cute kawaii cartoon, friendly, rounded, chubby proportions, big happy face if the subject has a face",
+    "linework": "thick, bold, clean, solid black outlines of even weight",
+    "composition": "one subject, centered, large, with comfortable empty white margin around it",
+    "detail_level": "minimal — few large simple shapes, no fine or busy detail"
+  },
+  "hard_requirements": [
+    "Pure black outlines (#000000) on a pure white (#FFFFFF) background only.",
+    "Every shape must be FULLY CLOSED — no gaps or breaks in any outline. Lines that should meet must connect completely.",
+    "Outlines must be THICK (bold) so they never look thin or faint.",
+    "Use LARGE, well-separated fillable areas. Each area a toddler could tap and color.",
+    "Keep the total number of separate regions small (roughly 8-20).",
+    "Leave clear white space between the subject and the image edges.",
+    "Flat 2D front-facing or simple side view. No perspective, no overlap clutter."
+  ],
+  "must_not": [
+    "No shading, no gray tones, no gradients.",
+    "No color of any kind — black and white only.",
+    "No fills, no solid black areas (outlines only; interiors stay white).",
+    "No textures, hatching, stippling, or patterns inside shapes.",
+    "No background scenery unless it is a few large simple closed shapes (e.g. one cloud, one ground line).",
+    "No text, no letters, no watermark, no signature, no border frame.",
+    "No tiny details (eyelashes, fur strands, sparkles clusters) that create tiny regions.",
+    "No open/broken lines, no sketchy or double lines, no dashed lines."
+  ],
+  "output": {
+    "format": "PNG",
+    "background": "opaque pure white",
+    "aspect_ratio": "1:1 square",
+    "resolution": "highest available, target ~1024-1536 px per side",
+    "count": 1
+  },
+  "self_check_before_finishing": [
+    "Are ALL outlines fully closed with no gaps? (critical)",
+    "Are the lines thick and solid black?",
+    "Is the background pure white with no shading?",
+    "Are there only a handful of big, easy-to-color regions?",
+    "Is it a single centered subject with white margin?"
+  ],
+  "example": {
+    "input_subject": "Unicorn",
+    "expected": "A single centered cute kawaii baby unicorn with thick closed black outlines: rounded body, big head with a small smile and dot eyes, a horn, a large curly mane and tail as big closed shapes, chunky legs, on pure white. Maybe one simple closed cloud or star. No shading, no color, few large regions."
+  }
+}

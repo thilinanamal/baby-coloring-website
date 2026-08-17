@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "placeholder": "node scripts/make-placeholder.mjs",
     "preprocess": "node scripts/preprocess.mjs",
+    "import": "node scripts/import-art.mjs",
     "manifest": "node scripts/build-manifest.mjs"
   },
   "dependencies": {

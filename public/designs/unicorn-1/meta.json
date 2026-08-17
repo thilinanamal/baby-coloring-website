@@ -1,0 +1,12 @@
+{
+  "name": "Unicorn 1",
+  "id": "unicorn-1",
+  "w": 2048,
+  "h": 2048,
+  "count": 31,
+  "rawRegions": 31,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

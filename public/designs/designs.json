@@ -1,8 +1,32 @@
 [
   {
+    "id": "cat",
+    "name": "Cat",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "dog",
+    "name": "Dog",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "placeholder-flower",
     "name": "Happy Flower",
     "w": 1000,
     "h": 1000
+  },
+  {
+    "id": "unicorn-1",
+    "name": "Unicorn 1",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "unicorn-2",
+    "name": "Unicorn 2",
+    "w": 2048,
+    "h": 2048
   }
 ]
