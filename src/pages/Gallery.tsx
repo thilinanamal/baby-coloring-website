@@ -48,6 +48,13 @@ export default function Gallery() {
           <div className="gallery-empty">No designs yet 🐣</div>
         )}
       </div>
+      <div className="credit">
+        Music by{' '}
+        <a href="https://incompetech.com" target="_blank" rel="noreferrer">
+          Kevin MacLeod
+        </a>{' '}
+        · CC BY 4.0
+      </div>
     </div>
   )
 }

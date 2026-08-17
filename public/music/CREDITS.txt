@@ -1,0 +1,13 @@
+Music credits — required by the Creative Commons Attribution 4.0 licence.
+
+All tracks by Kevin MacLeod (incompetech.com), licensed under
+Creative Commons: By Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/
+
+  - Heartwarming
+  - Meditation Impromptu 01
+  - Meditation Impromptu 03
+  - Peaceful Desolation
+  - Touching Moments Four – Melody
+
+To add more tracks: drop CC0 / CC-BY audio files into public/music/,
+run `node scripts/build-music.mjs`, add any CC-BY credits here, then push.
