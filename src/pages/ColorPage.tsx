@@ -5,6 +5,7 @@ import Palette from '../components/Palette'
 import Controls from '../components/Controls'
 import { useColoringState } from '../hooks/useColoringState'
 import { useSound } from '../hooks/useSound'
+import { useMusic } from '../hooks/useMusic'
 import { PALETTE, randomBrightHex } from '../data/palette'
 import '../styles/color.css'
 
@@ -22,6 +23,13 @@ export default function ColorPage() {
   const [design, setDesign] = useState<Design | null | undefined>(undefined)
   const { colors, paint, undo, clean, canUndo } = useColoringState()
   const { pop, click, sweep } = useSound()
+  const { muted, toggleMute, start: startMusic, stop: stopMusic } = useMusic()
+
+  // start the lullaby when a coloring page opens; stop on leave
+  useEffect(() => {
+    startMusic()
+    return () => stopMusic()
+  }, [startMusic, stopMusic])
 
   const [activeColor, setActiveColor] = useState(PALETTE[0].hex)
   const [isMagic, setIsMagic] = useState(false)
@@ -61,6 +69,13 @@ export default function ColorPage() {
 
   return (
     <div className="color-screen">
+      <button
+        className="music-toggle"
+        aria-label={muted ? 'turn music on' : 'turn music off'}
+        onPointerDown={toggleMute}
+      >
+        {muted ? '🔇' : '🔈'}
+      </button>
       <div className="stage">
         <ColoringCanvas
           design={design}

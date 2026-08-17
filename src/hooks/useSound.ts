@@ -1,19 +1,11 @@
 // Synthesized toddler-friendly sound effects via Web Audio — no asset files.
 // AudioContext is created lazily and resumed on first gesture (autoplay policy).
 
-import { useCallback, useRef } from 'react'
+import { useCallback } from 'react'
+import { getAudioContext } from '../audio/audioContext'
 
 export function useSound() {
-  const ctxRef = useRef<AudioContext | null>(null)
-
-  const ctx = useCallback(() => {
-    if (!ctxRef.current) {
-      const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext
-      ctxRef.current = new AC()
-    }
-    if (ctxRef.current.state === 'suspended') void ctxRef.current.resume()
-    return ctxRef.current
-  }, [])
+  const ctx = useCallback(() => getAudioContext(), [])
 
   const tone = useCallback(
     (freq: number, dur: number, type: OscillatorType = 'sine', gain = 0.18, slideTo?: number) => {
