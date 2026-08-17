@@ -25,11 +25,16 @@ export default function ColorPage() {
   const { pop, click, sweep } = useSound()
   const { muted, toggleMute, start: startMusic, stop: stopMusic } = useMusic()
 
-  // start the lullaby when a coloring page opens; stop on leave
+  // start the lullaby shortly after the design opens — the small delay lets the
+  // line/region images load first so audio doesn't fight them for bandwidth
   useEffect(() => {
-    startMusic()
-    return () => stopMusic()
-  }, [startMusic, stopMusic])
+    if (!design) return
+    const t = setTimeout(() => startMusic(), 1800)
+    return () => {
+      clearTimeout(t)
+      stopMusic()
+    }
+  }, [design, startMusic, stopMusic])
 
   const [activeColor, setActiveColor] = useState(PALETTE[0].hex)
   const [isMagic, setIsMagic] = useState(false)
