@@ -1,7 +1,25 @@
 [
   {
+    "id": "baby-elephant-holding-sunflower",
+    "name": "Baby Elephant Holding Sunflower",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "bear-looking-at-stars",
+    "name": "Bear Looking At Stars",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "cat",
     "name": "Cat",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "cow-wearing-flower-crown",
+    "name": "Cow Wearing Flower Crown",
     "w": 2048,
     "h": 2048
   },
@@ -12,10 +30,58 @@
     "h": 2048
   },
   {
+    "id": "dolphin-leaping-over-rainbow",
+    "name": "Dolphin Leaping Over Rainbow",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "fox-sitting-with-mushrooms",
+    "name": "Fox Sitting With Mushrooms",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "frog-sitting-on-lily-pad",
+    "name": "Frog Sitting On Lily Pad",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "placeholder-flower",
     "name": "Happy Flower",
     "w": 1000,
     "h": 1000
+  },
+  {
+    "id": "hedgehog-rolling-in-autumn-leaves",
+    "name": "Hedgehog Rolling In Autumn Leaves",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "lion-cub",
+    "name": "Lion Cub",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "owl-holding-leaf-umbrella",
+    "name": "Owl Holding Leaf Umbrella",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "penguin-standing-among-tulip-flowers",
+    "name": "Penguin Standing Among Tulip Flowers",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "rainbow-turtle-rainbow",
+    "name": "Rainbow Turtle Rainbow",
+    "w": 2048,
+    "h": 2048
   },
   {
     "id": "unicorn-1",

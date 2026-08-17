@@ -1,0 +1,12 @@
+{
+  "name": "Hedgehog Rolling In Autumn Leaves",
+  "id": "hedgehog-rolling-in-autumn-leaves",
+  "w": 2048,
+  "h": 2048,
+  "count": 26,
+  "rawRegions": 26,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

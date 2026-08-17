@@ -1,0 +1,12 @@
+{
+  "name": "Bear Looking At Stars",
+  "id": "bear-looking-at-stars",
+  "w": 2048,
+  "h": 2048,
+  "count": 30,
+  "rawRegions": 30,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

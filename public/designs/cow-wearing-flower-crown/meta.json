@@ -1,0 +1,12 @@
+{
+  "name": "Cow Wearing Flower Crown",
+  "id": "cow-wearing-flower-crown",
+  "w": 2048,
+  "h": 2048,
+  "count": 57,
+  "rawRegions": 57,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

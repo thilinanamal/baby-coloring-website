@@ -1,0 +1,16 @@
+{
+  "name": "Rainbow Turtle Rainbow",
+  "id": "rainbow-turtle-rainbow",
+  "w": 2048,
+  "h": 2048,
+  "count": 18,
+  "rawRegions": 18,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ]
+}
