@@ -1,0 +1,12 @@
+{
+  "name": "Sloth Sleeping On Moon",
+  "id": "sloth-sleeping-on-moon",
+  "w": 2048,
+  "h": 2048,
+  "count": 14,
+  "rawRegions": 14,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

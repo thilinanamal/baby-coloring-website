@@ -1,0 +1,18 @@
+{
+  "name": "Monkey Swinging From Vine",
+  "id": "monkey-swinging-from-vine",
+  "w": 2048,
+  "h": 2048,
+  "count": 39,
+  "rawRegions": 39,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ]
+}

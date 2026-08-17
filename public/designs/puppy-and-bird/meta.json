@@ -1,0 +1,12 @@
+{
+  "name": "Puppy And Bird",
+  "id": "puppy-and-bird",
+  "w": 2048,
+  "h": 2048,
+  "count": 13,
+  "rawRegions": 13,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

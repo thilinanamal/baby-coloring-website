@@ -1,0 +1,12 @@
+{
+  "name": "Octopus Wearing A Crown",
+  "id": "octopus-wearing-a-crown",
+  "w": 2048,
+  "h": 2048,
+  "count": 24,
+  "rawRegions": 24,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

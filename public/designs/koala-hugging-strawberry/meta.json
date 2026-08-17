@@ -1,0 +1,12 @@
+{
+  "name": "Koala Hugging Strawberry",
+  "id": "koala-hugging-strawberry",
+  "w": 2048,
+  "h": 2048,
+  "count": 36,
+  "rawRegions": 36,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

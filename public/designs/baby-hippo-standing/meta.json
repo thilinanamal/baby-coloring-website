@@ -1,0 +1,12 @@
+{
+  "name": "Baby Hippo Standing",
+  "id": "baby-hippo-standing",
+  "w": 2048,
+  "h": 2048,
+  "count": 35,
+  "rawRegions": 35,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

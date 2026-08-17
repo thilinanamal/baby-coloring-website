@@ -1,0 +1,12 @@
+{
+  "name": "Bunny Peeking From Teacup",
+  "id": "bunny-peeking-from-teacup",
+  "w": 2048,
+  "h": 2048,
+  "count": 32,
+  "rawRegions": 32,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

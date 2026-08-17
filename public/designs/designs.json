@@ -6,8 +6,20 @@
     "h": 2048
   },
   {
+    "id": "baby-hippo-standing",
+    "name": "Baby Hippo Standing",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "bear-looking-at-stars",
     "name": "Bear Looking At Stars",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "bunny-peeking-from-teacup",
+    "name": "Bunny Peeking From Teacup",
     "w": 2048,
     "h": 2048
   },
@@ -18,8 +30,26 @@
     "h": 2048
   },
   {
+    "id": "cat-on-magic-carpet",
+    "name": "Cat On Magic Carpet",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "corgi-wearing-magical-horn",
+    "name": "Corgi Wearing Magical Horn",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "cow-wearing-flower-crown",
     "name": "Cow Wearing Flower Crown",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "dinosaur-catching-shooting-star",
+    "name": "Dinosaur Catching Shooting Star",
     "w": 2048,
     "h": 2048
   },
@@ -60,8 +90,44 @@
     "h": 2048
   },
   {
+    "id": "kangaroo-leaping-over-clouds",
+    "name": "Kangaroo Leaping Over Clouds",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "kitten-playing-with-yarn",
+    "name": "Kitten Playing With Yarn",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "koala-hugging-strawberry",
+    "name": "Koala Hugging Strawberry",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "lion-cub",
     "name": "Lion Cub",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "monkey-swinging-from-vine",
+    "name": "Monkey Swinging From Vine",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "mouse-wearing-fairy-wings",
+    "name": "Mouse Wearing Fairy Wings",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "octopus-wearing-a-crown",
+    "name": "Octopus Wearing A Crown",
     "w": 2048,
     "h": 2048
   },
@@ -78,8 +144,44 @@
     "h": 2048
   },
   {
+    "id": "puppy-and-bird",
+    "name": "Puppy And Bird",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "rabbit-surrounded-by-floating",
+    "name": "Rabbit Surrounded By Floating",
+    "w": 2048,
+    "h": 2048
+  },
+  {
     "id": "rainbow-turtle-rainbow",
     "name": "Rainbow Turtle Rainbow",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "seal-playing-with-ball",
+    "name": "Seal Playing With Ball",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "sheep-jumping-fence",
+    "name": "Sheep Jumping Fence",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "sloth-sleeping-on-moon",
+    "name": "Sloth Sleeping On Moon",
+    "w": 2048,
+    "h": 2048
+  },
+  {
+    "id": "squirrel-holding-giant-acorn",
+    "name": "Squirrel Holding Giant Acorn",
     "w": 2048,
     "h": 2048
   },
