@@ -28,5 +28,11 @@
     "name": "Unicorn 2",
     "w": 2048,
     "h": 2048
+  },
+  {
+    "id": "unicorn-jumping-with-sun",
+    "name": "Unicorn Jumping With Sun",
+    "w": 2048,
+    "h": 2048
   }
 ]

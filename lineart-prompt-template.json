@@ -11,11 +11,12 @@
   },
   "hard_requirements": [
     "Pure black outlines (#000000) on a pure white (#FFFFFF) background only.",
+    "PLAIN WHITE BACKGROUND with NO scenery (no sky, ground, horizon, grass, floor). The subject sits on empty white. This is the safest, preferred layout.",
     "Every shape must be FULLY CLOSED — no gaps or breaks in any outline. Lines that should meet must connect completely.",
+    "Do NOT let any part of the subject or its outline run off the edges of the image. Keep the whole subject inside the frame with a clear white margin.",
     "Outlines must be THICK (bold) so they never look thin or faint.",
     "Use LARGE, well-separated fillable areas. Each area a toddler could tap and color.",
     "Keep the total number of separate regions small (roughly 8-20).",
-    "Leave clear white space between the subject and the image edges.",
     "Flat 2D front-facing or simple side view. No perspective, no overlap clutter."
   ],
   "must_not": [
@@ -23,7 +24,8 @@
     "No color of any kind — black and white only.",
     "No fills, no solid black areas (outlines only; interiors stay white).",
     "No textures, hatching, stippling, or patterns inside shapes.",
-    "No background scenery unless it is a few large simple closed shapes (e.g. one cloud, one ground line).",
+    "No background scenery. Do NOT add sky, ground, horizon, grass, or floor lines. If a background element is unavoidable, any line that divides the background MUST run fully from one image edge to the opposite edge so the areas are truly separate — never a line that stops partway.",
+    "Nothing may touch or cross the image border — no cropped ears, tails, leashes, or shapes bleeding off the edge.",
     "No text, no letters, no watermark, no signature, no border frame.",
     "No tiny details (eyelashes, fur strands, sparkles clusters) that create tiny regions.",
     "No open/broken lines, no sketchy or double lines, no dashed lines."

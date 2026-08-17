@@ -1,0 +1,12 @@
+{
+  "name": "Unicorn Jumping With Sun",
+  "id": "unicorn-jumping-with-sun",
+  "w": 2048,
+  "h": 2048,
+  "count": 32,
+  "rawRegions": 32,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

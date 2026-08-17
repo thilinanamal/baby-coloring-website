@@ -22,6 +22,13 @@ Example subjects: `baby unicorn`, `smiling cloud with rainbow`, `happy sun`,
 `cute cat`, `little boat`, `friendly dinosaur`, `ice cream cone with a face`.
 
 ### Rules that keep the pipeline happy
+- **Plain white background, no scenery.** This is the big one. Do NOT ask for sky,
+  ground, grass, or a horizon line. A partial divider line (one that stops partway
+  instead of reaching both image edges) does NOT separate the areas — sky and
+  ground stay one connected region and fill with a single tap. Keep the character
+  on empty white and this never happens.
+- **Nothing bleeds off the edge.** The whole subject must sit inside the frame with
+  a white margin. Cropped ears/tails touching the border cause open regions.
 - **Closed outlines.** Every shape must be fully enclosed. Open gaps let color
   leak between areas (or merge two areas into one).
 - **Thick lines.** Thin lines can vanish when the image is thresholded. Ask for
@@ -30,6 +37,12 @@ Example subjects: `baby unicorn`, `smiling cloud with rainbow`, `happy sun`,
   Those confuse region detection.
 - **Few, large shapes.** Toddlers want big areas to tap. Fewer regions also means
   fewer QA surprises. Avoid busy fine detail.
+
+> **Why sky + ground merged on the dog design:** its horizon line did not reach the
+> image edges, so the background was actually one connected area. A bigger `--close`
+> can't fix this — the divider must be closed in the *art*. Prefer plain white
+> backgrounds; the character's own parts (ears, face, paws, tail) are always
+> separate because their outlines are closed.
 
 ### Export
 - Download the **highest resolution PNG**.

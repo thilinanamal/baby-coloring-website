@@ -17,6 +17,7 @@
 import sharp from 'sharp'
 import { mkdir, writeFile } from 'node:fs/promises'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
 // ---------- morphology (separable box, binary) ----------
 function dilate1D(src, w, h, r, horizontal) {
@@ -289,7 +290,7 @@ function hslToRgb(h, s, l) {
 }
 
 // ---------- CLI ----------
-const isMain = process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)
+const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)
 if (isMain) {
   const args = process.argv.slice(2)
   const positional = args.filter((a) => !a.startsWith('--'))
