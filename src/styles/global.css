@@ -1,0 +1,51 @@
+:root {
+  --bg: #fff6fb;
+  --panel: #ffffff;
+  --accent: #ff7fb6;
+  --accent-2: #7fd3ff;
+  --shadow: 0 6px 0 rgba(0, 0, 0, 0.12);
+  --radius: 26px;
+  font-family: "Baloo 2", "Comic Sans MS", "Trebuchet MS", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+html,
+body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  background: var(--bg);
+}
+
+/* Prevent long-press image save / context menu on touch devices */
+img,
+canvas {
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}

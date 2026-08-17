@@ -1,0 +1,64 @@
+#!/usr/bin/env node
+/**
+ * make-placeholder.mjs — render a simple kawaii flower line-art (large closed
+ * shapes only) and run it through the preprocess pipeline, so the app has a
+ * real multi-region design before any Nano Banana art exists.
+ */
+import sharp from 'sharp'
+import { mkdir, writeFile } from 'node:fs/promises'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { processImage } from './preprocess.mjs'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const root = path.resolve(__dirname, '..')
+const SIZE = 1000
+const S = 22 // stroke width — thick so it survives threshold
+
+// Big, obviously-closed shapes: sun, cloud, flower (petals + center), stem, two leaves, pot, ground.
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}" viewBox="0 0 1000 1000">
+  <g fill="none" stroke="#000000" stroke-width="${S}" stroke-linejoin="round" stroke-linecap="round">
+    <!-- sun -->
+    <circle cx="185" cy="180" r="95"/>
+    <!-- happy face on sun -->
+    <circle cx="160" cy="165" r="9" fill="#000"/>
+    <circle cx="210" cy="165" r="9" fill="#000"/>
+    <path d="M150 205 q35 40 70 0"/>
+    <!-- cloud -->
+    <path d="M660 190 q-45 -70 -110 -30 q-70 -30 -95 35 q-55 5 -35 60 h300 q40 -50 -60 -65 z"/>
+    <!-- ground -->
+    <path d="M0 830 q250 -70 500 0 q250 70 500 0 v170 h-1000 z"/>
+    <!-- pot -->
+    <path d="M395 900 l30 -140 h150 l30 140 z"/>
+    <rect x="380" y="720" width="240" height="45" rx="16"/>
+    <!-- stem -->
+    <path d="M500 720 v-210"/>
+    <!-- leaves -->
+    <path d="M500 640 q-120 -30 -150 -110 q120 -10 150 70 z"/>
+    <path d="M500 590 q120 -30 150 -110 q-120 -10 -150 70 z"/>
+    <!-- flower petals (5) around center -->
+    <circle cx="500" cy="300" r="70"/>
+    <circle cx="410" cy="360" r="70"/>
+    <circle cx="590" cy="360" r="70"/>
+    <circle cx="445" cy="455" r="70"/>
+    <circle cx="555" cy="455" r="70"/>
+    <!-- flower center on top -->
+    <circle cx="500" cy="385" r="78" fill="#ffffff"/>
+  </g>
+</svg>`
+
+const outDir = path.join(root, 'public', 'designs', 'placeholder-flower')
+const srcPng = path.join(outDir, '_source.png')
+
+await mkdir(outDir, { recursive: true })
+await sharp(Buffer.from(svg))
+  .flatten({ background: '#ffffff' })
+  .png()
+  .toFile(srcPng)
+await writeFile(path.join(outDir, '_source.svg'), svg)
+
+const meta = await processImage(srcPng, outDir, { close: 2, min: 60, name: 'Happy Flower' })
+console.log(`✓ placeholder: ${meta.count} colorable regions, bg=${meta.backgroundIds.join(',') || 'none'}`)
+
+// refresh manifest
+await import('./build-manifest.mjs')

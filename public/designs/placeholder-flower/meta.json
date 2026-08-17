@@ -1,0 +1,12 @@
+{
+  "name": "Happy Flower",
+  "id": "placeholder-flower",
+  "w": 1000,
+  "h": 1000,
+  "count": 19,
+  "rawRegions": 19,
+  "mergedCount": 0,
+  "backgroundIds": [
+    1
+  ]
+}

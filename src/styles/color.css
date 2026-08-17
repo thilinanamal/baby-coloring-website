@@ -1,0 +1,212 @@
+.color-screen {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+}
+
+/* stage holds the coloring image, takes the lion's share of space */
+.stage {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.canvas-wrap {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  /* aspect-ratio is set inline from the image; cap by both dimensions */
+  width: auto;
+  height: 100%;
+}
+@supports (aspect-ratio: 1) {
+  .canvas-wrap {
+    height: auto;
+    max-height: 100%;
+    width: min(100%, calc(100% ));
+  }
+}
+
+.fill-canvas,
+.line-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.line-img {
+  pointer-events: none;
+  object-fit: fill;
+}
+.fill-canvas {
+  touch-action: none;
+  image-rendering: auto;
+}
+
+.canvas-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+  animation: spin 1.4s linear infinite;
+}
+.color-loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 72px;
+  animation: spin 1.4s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* juice */
+.canvas-wrap.bounce {
+  animation: pop 0.22s ease;
+}
+@keyframes pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.012); }
+  100% { transform: scale(1); }
+}
+.canvas-wrap.sweep::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+  transform: translateX(-100%);
+  animation: sweep 0.45s ease;
+  pointer-events: none;
+}
+@keyframes sweep {
+  to { transform: translateX(100%); }
+}
+
+/* sidebar: palette + controls */
+.sidebar {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.swatch {
+  width: clamp(64px, 9vw, 96px);
+  height: clamp(64px, 9vw, 96px);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  transition: transform 0.09s ease;
+  touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+}
+.swatch.is-white {
+  border: 3px solid #e2e2e2;
+}
+.swatch.magic {
+  background: conic-gradient(#ff3b30, #ff9500, #ffd60a, #34c759, #0a84ff, #af52de, #ff3b30);
+}
+.swatch:active {
+  transform: scale(0.9);
+}
+.swatch.selected {
+  transform: scale(1.28);
+  box-shadow: 0 0 0 5px #fff, 0 0 0 10px var(--accent), var(--shadow);
+  z-index: 2;
+}
+.swatch.selected:active {
+  transform: scale(1.18);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+.ctrl-btn {
+  width: clamp(60px, 8vw, 84px);
+  height: clamp(60px, 8vw, 84px);
+  border-radius: 50%;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  transition: transform 0.09s ease;
+}
+.ctrl-btn:active {
+  transform: scale(0.9);
+}
+.ctrl-btn.disabled {
+  opacity: 0.35;
+}
+.hold-btn {
+  padding: 6px;
+}
+.hold-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--panel);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Phone portrait: image on top, palette + controls below, no scroll */
+@media (max-aspect-ratio: 1/1) {
+  .color-screen {
+    flex-direction: column;
+  }
+  .stage {
+    flex: 1 1 62%;
+  }
+  .canvas-wrap {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 0 auto;
+  }
+  .sidebar {
+    flex: 0 0 auto;
+    flex-direction: column-reverse;
+  }
+  .palette {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .swatch {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+  .controls {
+    order: 2;
+  }
+}
