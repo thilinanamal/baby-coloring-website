@@ -214,9 +214,18 @@ export async function processImage(inputPath, outDir, opts = {}) {
     .png({ compressionLevel: 9 })
     .toFile(path.join(outDir, 'regions.png'))
 
-  // copy/normalise the display line art as line.png (flattened onto white)
-  await sharp(inputPath)
-    .flatten({ background: '#ffffff' })
+  // display line art as line.png — TRANSPARENT fill areas so the colour layer
+  // beneath shows through. Alpha comes from luminance: black lines opaque,
+  // white → fully transparent, anti-aliased edges get partial alpha.
+  const lineRgba = Buffer.alloc(n * 4)
+  for (let i = 0; i < n; i++) {
+    const gray = data[i * info.channels]
+    lineRgba[i * 4] = 0
+    lineRgba[i * 4 + 1] = 0
+    lineRgba[i * 4 + 2] = 0
+    lineRgba[i * 4 + 3] = 255 - gray
+  }
+  await sharp(lineRgba, { raw: { width: w, height: h, channels: 4 } })
     .png()
     .toFile(path.join(outDir, 'line.png'))
 
