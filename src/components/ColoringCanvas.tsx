@@ -18,6 +18,7 @@ export default function ColoringCanvas({ design, colors, onPaint, onPop, cleanSi
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const wrapRef = useRef<HTMLDivElement>(null)
   const regionRef = useRef<RegionData | null>(null)
+  const bgRef = useRef<Set<number>>(new Set())
   const fillDataRef = useRef<ImageData | null>(null)
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null)
   const [ready, setReady] = useState(false)
@@ -29,6 +30,13 @@ export default function ColoringCanvas({ design, colors, onPaint, onPop, cleanSi
   useEffect(() => {
     let cancelled = false
     setReady(false)
+    // fetch the background ids (border-touching regions) → not colorable
+    fetch(`${dir}/meta.json`)
+      .then((r) => r.json())
+      .then((m: { backgroundIds?: number[] }) => {
+        if (!cancelled) bgRef.current = new Set(m.backgroundIds ?? [])
+      })
+      .catch(() => {})
     loadRegionData(`${dir}/regions.png`).then((region) => {
       if (cancelled) return
       regionRef.current = region
@@ -82,6 +90,7 @@ export default function ColoringCanvas({ design, colors, onPaint, onPop, cleanSi
     if (idx == null) return
     const id = region.ids[idx]
     if (id === 0) return // tapped a line
+    if (bgRef.current.has(id)) return // tapped the background — not colorable
     const hex = onPaint(id)
     if (!hex) return
     // paint immediately for snappy feel (state effect will also repaint, harmless)
