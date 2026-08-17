@@ -11,14 +11,31 @@ interface Design {
 
 const base = import.meta.env.BASE_URL
 
+function shuffle<T>(arr: T[]): T[] {
+  const a = arr.slice()
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+// Cache the shuffled order for this page session, so navigating back to the
+// gallery keeps the same order — but a reload / new visit reshuffles.
+let sessionOrder: Design[] | null = null
+
 export default function Gallery() {
-  const [designs, setDesigns] = useState<Design[] | null>(null)
+  const [designs, setDesigns] = useState<Design[] | null>(sessionOrder)
   const navigate = useNavigate()
 
   useEffect(() => {
+    if (sessionOrder) return // already loaded + shuffled this session
     fetch(`${base}designs/designs.json`)
       .then((r) => r.json())
-      .then(setDesigns)
+      .then((list: Design[]) => {
+        sessionOrder = shuffle(list)
+        setDesigns(sessionOrder)
+      })
       .catch(() => setDesigns([]))
   }, [])
 
@@ -47,13 +64,6 @@ export default function Gallery() {
         {designs && designs.length === 0 && (
           <div className="gallery-empty">No designs yet 🐣</div>
         )}
-      </div>
-      <div className="credit">
-        Music by{' '}
-        <a href="https://incompetech.com" target="_blank" rel="noreferrer">
-          Kevin MacLeod
-        </a>{' '}
-        · CC BY 4.0
       </div>
     </div>
   )

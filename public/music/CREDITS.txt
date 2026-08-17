@@ -1,13 +1,11 @@
-Music credits — required by the Creative Commons Attribution 4.0 licence.
+Music — public-domain nursery-rhyme melodies, rendered in-house.
 
-All tracks by Kevin MacLeod (incompetech.com), licensed under
-Creative Commons: By Attribution 4.0 — https://creativecommons.org/licenses/by/4.0/
+Twinkle Twinkle, Old MacDonald, London Bridge, Mary Had a Little Lamb,
+Row Row Row Your Boat, and The Wheels on the Bus are traditional
+public-domain melodies. The audio here was generated from those melodies
+with fluidsynth (Music Box instrument) — no third-party recording is
+used, so no attribution is required.
 
-  - Heartwarming
-  - Meditation Impromptu 01
-  - Meditation Impromptu 03
-  - Peaceful Desolation
-  - Touching Moments Four – Melody
-
-To add more tracks: drop CC0 / CC-BY audio files into public/music/,
-run `node scripts/build-music.mjs`, add any CC-BY credits here, then push.
+To regenerate or add songs: edit SONGS in scripts/render-music.mjs, then
+  SF2=/path/to/gm.sf2 node scripts/render-music.mjs
+  node scripts/build-music.mjs
