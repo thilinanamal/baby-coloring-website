@@ -35,7 +35,15 @@ export default function Gallery() {
             aria-label={d.name}
             onClick={() => navigate(`color/${d.id}`)}
           >
-            <img src={`${base}designs/${d.id}/line.png`} alt={d.name} draggable={false} />
+            <img
+              src={`${base}designs/${d.id}/line.png`}
+              alt={d.name}
+              draggable={false}
+              loading="lazy"
+              decoding="async"
+              width={d.w}
+              height={d.h}
+            />
           </button>
         ))}
         {designs && designs.length === 0 && (
