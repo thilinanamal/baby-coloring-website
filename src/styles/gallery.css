@@ -38,7 +38,7 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.08s ease;
-  touch-action: manipulation;
+  touch-action: pan-y;
 }
 .design-card:active {
   transform: scale(0.94);

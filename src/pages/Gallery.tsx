@@ -1,10 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/gallery.css'
-
-// A press only counts as a "tap" (open design) if the finger barely moved.
-// A bigger move = the child is scrolling the gallery, so we don't open.
-const TAP_SLOP = 12 // px
 
 interface Design {
   id: string
@@ -18,19 +14,6 @@ const base = import.meta.env.BASE_URL
 export default function Gallery() {
   const [designs, setDesigns] = useState<Design[] | null>(null)
   const navigate = useNavigate()
-  const startRef = useRef<{ x: number; y: number } | null>(null)
-
-  function handleDown(e: React.PointerEvent) {
-    startRef.current = { x: e.clientX, y: e.clientY }
-  }
-
-  function handleUp(e: React.PointerEvent, id: string) {
-    const s = startRef.current
-    startRef.current = null
-    if (!s) return
-    const moved = Math.hypot(e.clientX - s.x, e.clientY - s.y)
-    if (moved <= TAP_SLOP) navigate(`color/${id}`) // real tap, not a scroll
-  }
 
   useEffect(() => {
     fetch(`${base}designs/designs.json`)
@@ -50,8 +33,7 @@ export default function Gallery() {
             key={d.id}
             className="design-card"
             aria-label={d.name}
-            onPointerDown={handleDown}
-            onPointerUp={(e) => handleUp(e, d.id)}
+            onClick={() => navigate(`color/${d.id}`)}
           >
             <img src={`${base}designs/${d.id}/line.png`} alt={d.name} draggable={false} />
           </button>
