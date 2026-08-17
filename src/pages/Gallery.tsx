@@ -36,13 +36,11 @@ export default function Gallery() {
             onClick={() => navigate(`color/${d.id}`)}
           >
             <img
-              src={`${base}designs/${d.id}/line.png`}
+              src={`${base}designs/${d.id}/thumb.png`}
               alt={d.name}
               draggable={false}
               loading="lazy"
               decoding="async"
-              width={d.w}
-              height={d.h}
             />
           </button>
         ))}

@@ -1,10 +1,10 @@
 {
   "name": "Dinosaur Catching Shooting Star",
   "id": "dinosaur-catching-shooting-star",
-  "w": 2048,
-  "h": 2048,
-  "count": 18,
-  "rawRegions": 18,
+  "w": 1024,
+  "h": 1024,
+  "count": 19,
+  "rawRegions": 19,
   "mergedCount": 0,
   "backgroundIds": [
     1

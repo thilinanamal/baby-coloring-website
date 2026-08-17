@@ -1,8 +1,8 @@
 {
   "name": "Owl Holding Leaf Umbrella",
   "id": "owl-holding-leaf-umbrella",
-  "w": 2048,
-  "h": 2048,
+  "w": 1024,
+  "h": 1024,
   "count": 30,
   "rawRegions": 30,
   "mergedCount": 0,

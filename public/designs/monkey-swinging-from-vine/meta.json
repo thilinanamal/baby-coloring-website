@@ -1,10 +1,10 @@
 {
   "name": "Monkey Swinging From Vine",
   "id": "monkey-swinging-from-vine",
-  "w": 2048,
-  "h": 2048,
-  "count": 39,
-  "rawRegions": 39,
+  "w": 1024,
+  "h": 1024,
+  "count": 43,
+  "rawRegions": 43,
   "mergedCount": 0,
   "backgroundIds": [
     1,

@@ -1,8 +1,8 @@
 {
   "name": "Mouse Wearing Fairy Wings",
   "id": "mouse-wearing-fairy-wings",
-  "w": 2048,
-  "h": 2048,
+  "w": 1024,
+  "h": 1024,
   "count": 23,
   "rawRegions": 23,
   "mergedCount": 0,

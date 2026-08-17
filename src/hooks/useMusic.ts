@@ -35,7 +35,7 @@ export function useMusic() {
     const ctx = getAudioContext()
     if (busRef.current) return busRef.current
     const bus = ctx.createGain()
-    bus.gain.value = mutedRef.current ? 0 : MUSIC_LEVEL
+    bus.gain.value = 0 // fade in on start to avoid a click
     const lp = ctx.createBiquadFilter()
     lp.type = 'lowpass'
     lp.frequency.value = 2200
@@ -112,7 +112,13 @@ export function useMusic() {
     if (runningRef.current) return
     runningRef.current = true
     cleanupGateRef.current = whenRunning(() => {
-      buildGraph()
+      const bus = buildGraph()
+      const ctx = getAudioContext()
+      if (!mutedRef.current) {
+        bus.gain.cancelScheduledValues(ctx.currentTime)
+        bus.gain.setValueAtTime(0.0001, ctx.currentTime)
+        bus.gain.linearRampToValueAtTime(MUSIC_LEVEL, ctx.currentTime + 1.5) // gentle fade-in
+      }
       loop()
     })
   }, [buildGraph, loop])

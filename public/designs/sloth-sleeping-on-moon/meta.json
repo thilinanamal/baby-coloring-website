@@ -1,8 +1,8 @@
 {
   "name": "Sloth Sleeping On Moon",
   "id": "sloth-sleeping-on-moon",
-  "w": 2048,
-  "h": 2048,
+  "w": 1024,
+  "h": 1024,
   "count": 14,
   "rawRegions": 14,
   "mergedCount": 0,

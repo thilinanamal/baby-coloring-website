@@ -1,8 +1,8 @@
 {
   "name": "Bunny Peeking From Teacup",
   "id": "bunny-peeking-from-teacup",
-  "w": 2048,
-  "h": 2048,
+  "w": 1024,
+  "h": 1024,
   "count": 32,
   "rawRegions": 32,
   "mergedCount": 0,

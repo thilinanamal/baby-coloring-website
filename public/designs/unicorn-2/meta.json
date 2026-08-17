@@ -1,10 +1,10 @@
 {
   "name": "Unicorn 2",
   "id": "unicorn-2",
-  "w": 2048,
-  "h": 2048,
-  "count": 29,
-  "rawRegions": 29,
+  "w": 1024,
+  "h": 1024,
+  "count": 28,
+  "rawRegions": 28,
   "mergedCount": 0,
   "backgroundIds": [
     1

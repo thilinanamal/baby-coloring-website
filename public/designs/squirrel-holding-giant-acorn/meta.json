@@ -1,10 +1,10 @@
 {
   "name": "Squirrel Holding Giant Acorn",
   "id": "squirrel-holding-giant-acorn",
-  "w": 2048,
-  "h": 2048,
-  "count": 19,
-  "rawRegions": 19,
+  "w": 1024,
+  "h": 1024,
+  "count": 20,
+  "rawRegions": 20,
   "mergedCount": 0,
   "backgroundIds": [
     1

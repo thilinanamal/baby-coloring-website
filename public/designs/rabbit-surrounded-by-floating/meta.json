@@ -1,8 +1,8 @@
 {
   "name": "Rabbit Surrounded By Floating",
   "id": "rabbit-surrounded-by-floating",
-  "w": 2048,
-  "h": 2048,
+  "w": 1024,
+  "h": 1024,
   "count": 25,
   "rawRegions": 25,
   "mergedCount": 0,

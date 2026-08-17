@@ -1,10 +1,10 @@
 {
   "name": "Sheep Jumping Fence",
   "id": "sheep-jumping-fence",
-  "w": 2048,
-  "h": 2048,
-  "count": 30,
-  "rawRegions": 30,
+  "w": 1024,
+  "h": 1024,
+  "count": 32,
+  "rawRegions": 32,
   "mergedCount": 0,
   "backgroundIds": [
     1

@@ -1,10 +1,10 @@
 {
   "name": "Puppy And Bird",
   "id": "puppy-and-bird",
-  "w": 2048,
-  "h": 2048,
-  "count": 13,
-  "rawRegions": 13,
+  "w": 1024,
+  "h": 1024,
+  "count": 12,
+  "rawRegions": 12,
   "mergedCount": 0,
   "backgroundIds": [
     1

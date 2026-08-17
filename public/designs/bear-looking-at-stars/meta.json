@@ -1,10 +1,10 @@
 {
   "name": "Bear Looking At Stars",
   "id": "bear-looking-at-stars",
-  "w": 2048,
-  "h": 2048,
-  "count": 30,
-  "rawRegions": 30,
+  "w": 1024,
+  "h": 1024,
+  "count": 28,
+  "rawRegions": 28,
   "mergedCount": 0,
   "backgroundIds": [
     1

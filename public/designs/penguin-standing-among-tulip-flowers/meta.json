@@ -1,8 +1,8 @@
 {
   "name": "Penguin Standing Among Tulip Flowers",
   "id": "penguin-standing-among-tulip-flowers",
-  "w": 2048,
-  "h": 2048,
+  "w": 1024,
+  "h": 1024,
   "count": 32,
   "rawRegions": 32,
   "mergedCount": 0,

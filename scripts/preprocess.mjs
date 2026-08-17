@@ -95,9 +95,12 @@ export async function processImage(inputPath, outDir, opts = {}) {
   const minArea = opts.min ?? 40
   const threshold = opts.threshold ?? 128
   const name = opts.name ?? path.basename(outDir)
+  const maxDim = opts.maxDim ?? 1024 // cap resolution — plenty crisp on phones, far faster
+  const thumbDim = opts.thumbDim ?? 320 // gallery thumbnail size
 
-  // 1. load, flatten transparency onto white, grayscale, raw bytes
+  // 1. load, cap resolution, flatten onto white, grayscale, raw bytes
   const { data, info } = await sharp(inputPath)
+    .resize(maxDim, maxDim, { fit: 'inside', withoutEnlargement: true })
     .flatten({ background: '#ffffff' })
     .grayscale()
     .raw()
@@ -230,6 +233,13 @@ export async function processImage(inputPath, outDir, opts = {}) {
   await sharp(lineRgba, { raw: { width: w, height: h, channels: 4 } })
     .png()
     .toFile(path.join(outDir, 'line.png'))
+
+  // thumbnail for the gallery — small, white background, fast to load
+  await sharp(lineRgba, { raw: { width: w, height: h, channels: 4 } })
+    .flatten({ background: '#ffffff' })
+    .resize(thumbDim, thumbDim, { fit: 'inside' })
+    .png({ compressionLevel: 9 })
+    .toFile(path.join(outDir, 'thumb.png'))
 
   // 8. meta.json
   const meta = {

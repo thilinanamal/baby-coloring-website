@@ -1,10 +1,10 @@
 {
   "name": "Kitten Playing With Yarn",
   "id": "kitten-playing-with-yarn",
-  "w": 2048,
-  "h": 2048,
-  "count": 70,
-  "rawRegions": 70,
+  "w": 1024,
+  "h": 1024,
+  "count": 68,
+  "rawRegions": 68,
   "mergedCount": 0,
   "backgroundIds": [
     1
